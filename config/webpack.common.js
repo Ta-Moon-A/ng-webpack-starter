@@ -184,10 +184,9 @@ module.exports = function (options) {
         {
           test: /\.(jpg|png|gif)$/,
           use: 'file-loader'
-        },
+        }
 
-      ],
-
+      ]
     },
 
     /*
@@ -220,12 +219,6 @@ module.exports = function (options) {
       new CommonsChunkPlugin({
         name: 'polyfills',
         chunks: ['polyfills']
-      }),
-      // This enables tree shaking of the vendor modules
-      new CommonsChunkPlugin({
-        name: 'vendor',
-        chunks: ['main'],
-        minChunks: module => /node_modules/.test(module.resource)
       }),
       // Specify the correct order the scripts will be injected in
       new CommonsChunkPlugin({
