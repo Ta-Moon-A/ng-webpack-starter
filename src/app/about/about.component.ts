@@ -1,7 +1,9 @@
 import { 
     Component,
     OnInit ,
-    Input 
+    Input,
+    Output,
+    EventEmitter
 } from '@angular/core';
 
 @Component({
@@ -12,10 +14,13 @@ import {
 
 export class AboutComponent {
    @Input() name : string = 'Component';
+   @Output() nameChanged : EventEmitter<any> = new EventEmitter();
 
+   constructor(){}
 
-   constructor()
-   {
-   
+   onClick(){
+        console.log('click in about');
+        this.nameChanged.emit("About Component Click");
+       
    }
 }

@@ -11,12 +11,16 @@ import {
 
 export class HomeComponent implements OnInit {
 
-  aboutName : string= "about home";
+  aboutName : string = "home";
   constructor() {
 
   }
 
   public ngOnInit() {
     console.log('Home component initialised');
+  }
+
+  onNameChange(){
+    console.log('click in home');
   }
 }

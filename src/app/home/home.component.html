@@ -1,2 +1,2 @@
 Hello Angular2!
-<about  [name]="aboutName"></about>
+<about (nameChanged)="onNameChange($event)" [name]="aboutName"></about>
