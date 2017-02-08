@@ -12,6 +12,7 @@ import {
 export class HomeComponent implements OnInit {
 
   aboutName : string = "home";
+  testName : string = "";
   constructor() {
 
   }

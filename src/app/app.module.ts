@@ -25,6 +25,8 @@ import { AppComponent } from './app.component';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
+import { BgInputComponent } from './bg-Input';
+import { SimpleFormComponent } from './simple-form';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -48,7 +50,9 @@ type StoreType = {
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    BgInputComponent,
+    SimpleFormComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,

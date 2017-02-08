@@ -1,0 +1,7 @@
+<form (ngSubmit)="$event.preventDefault(); onSubmit(simpleForm)" #simpleForm="ngForm">
+  <label>Firstname</label>
+  <input type="text" [(ngModel)]="firstname" name="firtsnameinp"/>
+  <label>Age</label>
+  <input type="number" [(ngModel)]="Age" name="ageinp"/>
+  <button type="submit">Submit</button>
+</form>
