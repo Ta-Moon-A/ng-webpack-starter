@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
   NgModule,
@@ -27,6 +27,7 @@ import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 import { BgInputComponent } from './bg-Input';
 import { SimpleFormComponent } from './simple-form';
+import { ReactiveFormComponent } from './reactive-form';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -52,11 +53,13 @@ type StoreType = {
     HomeComponent,
     AboutComponent,
     BgInputComponent,
-    SimpleFormComponent
+    SimpleFormComponent,
+    ReactiveFormComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules })
   ],

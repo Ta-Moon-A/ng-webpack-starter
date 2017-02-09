@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
+  <label>Firstname</label>
+  <input type="text" formControlName="firstname"/>
+  <p *ngIf="reactiveForm && !reactiveForm.controls.firstname.valid">firstname control is invalid!</p>
+  <p *ngIf="reactiveForm && reactiveForm.controls.firstname.errors?.asyncRequired">firstname  asyncRequired control is invalid!</p>
+  <br/>
+  <label>Lastname</label>
+  <input type="text" formControlName="lastname"/><br/>
+  <label>Age</label>
+  <input type="number" formControlName="age"/><br/>
+  
+  <button type="submit">Submit</button>
+  <p *ngIf="reactiveForm && !reactiveForm.valid">form  is invalid!</p>
+</form>
