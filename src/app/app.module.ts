@@ -28,6 +28,7 @@ import { AboutComponent } from './about';
 import { BgInputComponent } from './bg-Input';
 import { SimpleFormComponent } from './simple-form';
 import { ReactiveFormComponent } from './reactive-form';
+import { HomeService } from './home/home.Service';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -65,7 +66,8 @@ type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    HomeService
   ]
 })
 export class AppModule {

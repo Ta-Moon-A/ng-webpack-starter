@@ -1,7 +1,11 @@
+import { Greeting } from './home.model';
+import { Response } from '@angular/http';
 import {
   Component,
   OnInit
 } from '@angular/core';
+
+import { HomeService } from './home.Service';
 
 @Component({
   selector: 'home',
@@ -9,19 +13,33 @@ import {
   templateUrl: './home.component.html'
 })
 
+
+
 export class HomeComponent implements OnInit {
 
   aboutName : string = "home";
   testName : string = "";
-  constructor() {
-
+  greeting : Greeting = <Greeting>{};
+  
+  constructor(public homeService: HomeService) {
+      
   }
 
   public ngOnInit() {
-    console.log('Home component initialised');
+    this.homeService.getGreetingMessage().subscribe(
+       (response : Response) => {
+         this.greeting = new Greeting (response.json());
+       },
+       (error : any)=>{
+          
+       },
+       ()=>{
+
+       })
   }
 
   onNameChange(){
+    
     console.log('click in home');
   }
 }
