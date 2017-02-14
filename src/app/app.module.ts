@@ -1,37 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
+import '../styles/headings.css';
+import '../styles/styles.scss';
+import { AboutComponent } from './about';
+import { AppComponent } from './app.component';
+import { ROUTES } from './app.routes';
+import { AppState, InternalStateType } from './app.service';
+import { BgInputComponent } from './bg-Input';
+import { ENV_PROVIDERS } from './environment';
+import { HomeComponent } from './home';
+import { HomeService } from './home/home.Service';
+import { ReactiveFormComponent } from './reactive-form';
+import { FilterPipe } from './shared/pipes/filter.pipe';
+import { TextSplitPipe } from './shared/pipes/text-split.pipe';
+import { SimpleFormComponent } from './simple-form';
+import { ApplicationRef, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {
-  NgModule,
-  ApplicationRef
-} from '@angular/core';
-import {
-  removeNgStyles,
-  createNewHosts,
-  createInputTransfer
-} from '@angularclass/hmr';
-import {
-  RouterModule,
-  PreloadAllModules
-} from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { PreloadAllModules, RouterModule } from '@angular/router';
+import { createInputTransfer, createNewHosts, removeNgStyles } from '@angularclass/hmr';
 
 /*
  * Platform and Environment providers/directives/pipes
  */
-import { ENV_PROVIDERS } from './environment';
-import { ROUTES } from './app.routes';
 // App is our top level component
-import { AppComponent } from './app.component';
-import { AppState, InternalStateType } from './app.service';
-import { HomeComponent } from './home';
-import { AboutComponent } from './about';
-import { BgInputComponent } from './bg-Input';
-import { SimpleFormComponent } from './simple-form';
-import { ReactiveFormComponent } from './reactive-form';
-import { HomeService } from './home/home.Service';
 
-import '../styles/styles.scss';
-import '../styles/headings.css';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -55,7 +47,9 @@ type StoreType = {
     AboutComponent,
     BgInputComponent,
     SimpleFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    TextSplitPipe,
+    FilterPipe
   ],
   imports: [ // import Angular's modules
     BrowserModule,

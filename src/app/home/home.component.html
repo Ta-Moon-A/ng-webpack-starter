@@ -10,3 +10,17 @@
 <!--<reactive-form></reactive-form>-->
 
 <p>{{greeting.greetingMessage}}</p>
+
+<!-- Start Pipes -->
+<p>{{values | json}}</p>
+<p>{{valueString | uppercase}}</p>
+<p>{{valueDate | date:"yyyy/MM/dd"}}</p>
+<p>{{valueDate | date | uppercase}}</p>
+<p>{{valueLongText | textsplit:2}}</p>
+
+<ul>
+    <li *ngFor="let item of values | filter:'age':25">
+        {{item.name}} {{item.age}}
+    </li>
+</ul>
+<!-- End Pipes -->
