@@ -29,6 +29,9 @@ export class HomeComponent implements OnInit {
 
   value3: string = new TextSplitPipe().transform("Hlello BOG from ts", 2);
 
+    showText : boolean = true;
+    showNumber  : number = 2;
+
   constructor(public homeService: HomeService) {
 
   }
@@ -56,4 +59,25 @@ export class HomeComponent implements OnInit {
 
     console.log('click in home');
   }
+
+  onbtnClick()
+    {
+           //console.log(this.showText);
+           this.showText = !this.showText;
+    }
+
+   showTextArea()
+   {
+     console.log("show");
+     return true;
+   }
+   
+   printItem(item){
+       console.log(item);
+   }
+
+   deleteItem(item){
+      let index = this.values.indexOf(item);
+      this.values.splice(index,1);
+   }
 }

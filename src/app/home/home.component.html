@@ -12,7 +12,7 @@
 <p>{{greeting.greetingMessage}}</p>
 
 <!-- Start Pipes -->
-<p>{{values | json}}</p>
+<!--<p>{{values | json}}</p>
 <p>{{valueString | uppercase}}</p>
 <p>{{valueDate | date:"yyyy/MM/dd"}}</p>
 <p>{{valueDate | date | uppercase}}</p>
@@ -22,5 +22,58 @@
     <li *ngFor="let item of values | filter:'age':25">
         {{item.name}} {{item.age}}
     </li>
-</ul>
+</ul>-->
 <!-- End Pipes -->
+
+
+<!-- start directives -->
+
+
+<div class="red-text">
+    this is native red div
+</div>
+
+<div [ngClass]="{'red-text' : showText}">
+    this is ngclass red div
+</div>
+
+<div [ngStyle]="{color : 'green'}">
+    this is ngstyle green  div   
+</div>
+
+<div [ngSwitch]="showNumber">
+   <span *ngSwitchCase="1">case 1</span> 
+   <span *ngSwitchCase="2">case 2</span> 
+   <span *ngSwitchCase="3">case 3</span> 
+</div>
+
+<div *ngIf="showText">
+    this is element in ngIf 
+</div>
+
+<button (click)="showText = !showText">
+<span *ngIf="showTextArea()">show</span> 
+<span *ngIf="!showText">hide</span>
+</button>
+
+<button [disabled]="showText">
+<span *ngIf="showText">disabled</span> 
+<span *ngIf="!showText">enabled</span>
+</button>
+
+
+<ul>
+    <li *ngFor="let item of values; let i = index;">
+       {{i}}. {{item.name}} {{item.age}}
+       <span *ngIf="i%2 === 0">odd</span>
+       <button (click)="deleteItem(item)">delete</button>
+    </li>
+</ul>
+
+<h3>{{values | json}}</h3>
+
+<span redization>custom directive</span>
+
+
+
+<!-- end directives -->

@@ -18,7 +18,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule } from '@angular/router';
 import { createInputTransfer, createNewHosts, removeNgStyles } from '@angularclass/hmr';
-
+import {RedizationDirective} from './shared/directives/redization.directive'
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -49,7 +49,8 @@ type StoreType = {
     SimpleFormComponent,
     ReactiveFormComponent,
     TextSplitPipe,
-    FilterPipe
+    FilterPipe,
+    RedizationDirective
   ],
   imports: [ // import Angular's modules
     BrowserModule,
