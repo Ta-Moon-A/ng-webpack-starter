@@ -18,7 +18,8 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule } from '@angular/router';
 import { createInputTransfer, createNewHosts, removeNgStyles } from '@angularclass/hmr';
-import {RedizationDirective} from './shared/directives/redization.directive'
+import {RedizationDirective} from './shared/directives/redization.directive';
+import { HttpWrapperService } from './shared/services/http-wrapper';
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -62,7 +63,8 @@ type StoreType = {
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
-    HomeService
+    HomeService,
+    HttpWrapperService
   ]
 })
 export class AppModule {

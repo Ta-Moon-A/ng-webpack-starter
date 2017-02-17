@@ -10,4 +10,4 @@ export class RedizationDirective{
         this.elementRef.nativeElement.style.color = 'red';
     }
 
-}
+} 
